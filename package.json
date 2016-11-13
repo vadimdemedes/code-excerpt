@@ -1,0 +1,32 @@
+{
+  "name": "code-excerpt",
+  "version": "1.0.0",
+  "description": "Extract code excerpts",
+  "license": "MIT",
+  "repository": "vdemedes/code-excerpt",
+  "author": {
+    "name": "vdemedes",
+    "email": "vdemedes@gmail.com",
+    "url": "github.com/vdemedes"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "convert-to-spaces": "^1.0.0",
+    "repeating": "^3.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "esnext": true
+  }
+}
