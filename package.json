@@ -19,8 +19,7 @@
     "index.js"
   ],
   "dependencies": {
-    "convert-to-spaces": "^1.0.1",
-    "repeating": "^3.0.0"
+    "convert-to-spaces": "^1.0.1"
   },
   "devDependencies": {
     "ava": "^0.16.0",

@@ -1,7 +1,6 @@
 'use strict';
 
 const tabsToSpaces = require('convert-to-spaces');
-const repeating = require('repeating');
 
 function generateLineNumbers(line, around) {
 	const lineNumbers = [];
@@ -23,7 +22,7 @@ function extendLines(source) {
 	return lines
 		.map(line => {
 			if (line.length < maxLength) {
-				line += repeating(maxLength - line.length);
+				line += ' '.repeat(maxLength - line.length);
 			}
 
 			return line;
