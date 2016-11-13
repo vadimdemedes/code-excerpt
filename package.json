@@ -19,7 +19,7 @@
     "index.js"
   ],
   "dependencies": {
-    "convert-to-spaces": "^1.0.0",
+    "convert-to-spaces": "^1.0.1",
     "repeating": "^3.0.0"
   },
   "devDependencies": {
