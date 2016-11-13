@@ -1,4 +1,4 @@
-# code-excerpt [![Build Status](https://travis-ci.org/vdemedes/code-excerpt.svg?branch=master)](https://travis-ci.org/vdemedes/code-excerpt) [![Coverage Status](https://coveralls.io/repos/github/vdemedes/code-excerpt/badge.svg?branch=master)](https://coveralls.io/github/vdemedes/code-excerpt?branch=master)
+# code-excerpt [![Build Status](https://travis-ci.org/vdemedes/code-excerpt.svg?branch=master)](https://travis-ci.org/vdemedes/code-excerpt)
 
 > Extract code excerpts
 
