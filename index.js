@@ -15,19 +15,17 @@ function generateLineNumbers(line, around) {
 	return lineNumbers;
 }
 
-function extendLines(source) {
-	const lines = source.split('\n');
-	const maxLength = Math.max.apply(null, lines.map(line => line.length));
+function extendLines(lines) {
+	const maxLength = Math.max.apply(null, lines.map(line => line.value.length));
 
 	return lines
 		.map(line => {
-			if (line.length < maxLength) {
-				line += ' '.repeat(maxLength - line.length);
+			if (line.value.length < maxLength) {
+				line.value += ' '.repeat(maxLength - line.value.length);
 			}
 
 			return line;
-		})
-		.join('\n');
+		});
 }
 
 module.exports = (source, line, options) => {
@@ -39,7 +37,7 @@ module.exports = (source, line, options) => {
 		throw new TypeError('Line number must start from `1`.');
 	}
 
-	source = extendLines(tabsToSpaces(source)).split('\n');
+	source = tabsToSpaces(source).split('\n');
 
 	if (line > source.length) {
 		throw new TypeError(`Line number \`${line}\` is bigger than a total number of lines (${source.length}).`);
@@ -49,7 +47,7 @@ module.exports = (source, line, options) => {
 		around: 3
 	}, options);
 
-	return generateLineNumbers(line, options.around)
+	return extendLines(generateLineNumbers(line, options.around)
 		.filter(line => source[line - 1] !== undefined)
-		.map(line => ({line, value: source[line - 1]}));
+		.map(line => ({line, value: source[line - 1]})));
 };

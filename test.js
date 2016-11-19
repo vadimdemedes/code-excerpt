@@ -77,6 +77,16 @@ test('extract custom number of lines around', t => {
 	]);
 });
 
+test('extend lines to equal width', t => {
+	const excerpt = codeExcerpt(source, 7, {around: 1});
+
+	t.deepEqual(excerpt, [
+		{line: 6, value: '  const a = 1;'},
+		{line: 7, value: '  const b = 2;'},
+		{line: 8, value: '  const c = 3;'}
+	]);
+});
+
 test('convert tabs to spaces for consistent output', t => {
 	const excerpt = codeExcerpt(source, 5, {around: 10});
 
