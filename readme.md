@@ -31,13 +31,13 @@ module.exports = () => {
 
 const excerpt = codeExcerpt(source, 5);
 //=> [
-//	{line: 2, value: '                        '},
-//	{line: 3, value: 'function someFunc() {}  '},
-//	{line: 4, value: '                        '},
+//	{line: 2, value: ''},
+//	{line: 3, value: 'function someFunc() {}'},
+//	{line: 4, value: ''},
 //	{line: 5, value: 'module.exports = () => {'},
-//	{line: 6, value: '  const a = 1;          '},
-//	{line: 7, value: '  const b = 2;          '},
-//	{line: 8, value: '  const c = 3;          '}
+//	{line: 6, value: '  const a = 1;'},
+//	{line: 7, value: '  const b = 2;'},
+//	{line: 8, value: '  const c = 3;'}
 // ]
 ```
 
@@ -45,9 +45,6 @@ const excerpt = codeExcerpt(source, 5);
 ## API
 
 ### codeExcerpt(source, line, [options])
-
-All lines in the output have equal width for convenience (customizable via `options.equalLength`).
-For example, if a line needs to be highlighted, the highlight will be full-width, just like in editors.
 
 #### source
 
@@ -69,13 +66,6 @@ Type: `number`<br>
 Default: `3`
 
 Number of surrounding lines to extract.
-
-##### equalLength
-
-Type: `boolean`<br>
-Default: `true`
-
-Extend lines to the same length. Useful for highlighting lines.
 
 
 ## License

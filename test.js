@@ -1,10 +1,6 @@
 import test from 'ava';
 import codeExcerpt from './';
 
-function trimExcerpt(excerpt) {
-	return excerpt.map(({line, value}) => ({line, value: value.trim()}));
-}
-
 const source = `
 'use strict';
 
@@ -34,21 +30,21 @@ test('fail when line number is bigger than total number of lines', t => {
 test('excerpt in the middle', t => {
 	const excerpt = codeExcerpt(source, 5);
 
-	t.deepEqual(trimExcerpt(excerpt), [
+	t.deepEqual(excerpt, [
 		{line: 2, value: ''},
 		{line: 3, value: 'function someFunc() {}'},
 		{line: 4, value: ''},
 		{line: 5, value: 'module.exports = () => {'},
-		{line: 6, value: 'const a = 1;'},
-		{line: 7, value: 'const b = 20;'},
-		{line: 8, value: 'const c = 3;'}
+		{line: 6, value: '  const a = 1;'},
+		{line: 7, value: '  const b = 20;'},
+		{line: 8, value: '  const c = 3;'}
 	]);
 });
 
 test('excerpt in the beginning', t => {
 	const excerpt = codeExcerpt(source, 1);
 
-	t.deepEqual(trimExcerpt(excerpt), [
+	t.deepEqual(excerpt, [
 		{line: 1, value: '\'use strict\';'},
 		{line: 2, value: ''},
 		{line: 3, value: 'function someFunc() {}'},
@@ -59,10 +55,10 @@ test('excerpt in the beginning', t => {
 test('excerpt in the end', t => {
 	const excerpt = codeExcerpt(source, 11);
 
-	t.deepEqual(trimExcerpt(excerpt), [
-		{line: 8, value: 'const c = 3;'},
+	t.deepEqual(excerpt, [
+		{line: 8, value: '  const c = 3;'},
 		{line: 9, value: ''},
-		{line: 10, value: 'someFunc();'},
+		{line: 10, value: '  someFunc();'},
 		{line: 11, value: '};'}
 	]);
 });
@@ -70,30 +66,10 @@ test('excerpt in the end', t => {
 test('extract custom number of lines around', t => {
 	const excerpt = codeExcerpt(source, 5, {around: 1});
 
-	t.deepEqual(trimExcerpt(excerpt), [
+	t.deepEqual(excerpt, [
 		{line: 4, value: ''},
 		{line: 5, value: 'module.exports = () => {'},
-		{line: 6, value: 'const a = 1;'}
-	]);
-});
-
-test('extend lines to equal width', t => {
-	const excerpt = codeExcerpt(source, 7, {around: 1});
-
-	t.deepEqual(excerpt, [
-		{line: 6, value: '  const a = 1; '},
-		{line: 7, value: '  const b = 20;'},
-		{line: 8, value: '  const c = 3; '}
-	]);
-});
-
-test('dont extend lines to equal width', t => {
-	const excerpt = codeExcerpt(source, 7, {around: 1, equalLength: false});
-
-	t.deepEqual(excerpt, [
-		{line: 6, value: '  const a = 1;'},
-		{line: 7, value: '  const b = 20;'},
-		{line: 8, value: '  const c = 3;'}
+		{line: 6, value: '  const a = 1;'}
 	]);
 });
 
@@ -101,16 +77,16 @@ test('convert tabs to spaces for consistent output', t => {
 	const excerpt = codeExcerpt(source, 5, {around: 10});
 
 	t.deepEqual(excerpt, [
-		{line: 1, value: '\'use strict\';           '},
-		{line: 2, value: '                        '},
-		{line: 3, value: 'function someFunc() {}  '},
-		{line: 4, value: '                        '},
+		{line: 1, value: '\'use strict\';'},
+		{line: 2, value: ''},
+		{line: 3, value: 'function someFunc() {}'},
+		{line: 4, value: ''},
 		{line: 5, value: 'module.exports = () => {'},
-		{line: 6, value: '  const a = 1;          '},
-		{line: 7, value: '  const b = 20;         '},
-		{line: 8, value: '  const c = 3;          '},
-		{line: 9, value: '                        '},
-		{line: 10, value: '  someFunc();           '},
-		{line: 11, value: '};                      '}
+		{line: 6, value: '  const a = 1;'},
+		{line: 7, value: '  const b = 20;'},
+		{line: 8, value: '  const c = 3;'},
+		{line: 9, value: ''},
+		{line: 10, value: '  someFunc();'},
+		{line: 11, value: '};'}
 	]);
 });
