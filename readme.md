@@ -70,4 +70,4 @@ Number of surrounding lines to extract.
 
 ## License
 
-MIT © [vdemedes](https://github.com/vdemedes)
+MIT © [Vadim Demedes](https://github.com/vadimdemedes)
