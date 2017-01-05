@@ -12,7 +12,7 @@ function someFunc() {}
 
 module.exports = () => {
 	const a = 1;
-	const b = 2;
+	const b = 20;
 	const c = 3;
 
 	someFunc();
@@ -40,7 +40,7 @@ test('excerpt in the middle', t => {
 		{line: 4, value: ''},
 		{line: 5, value: 'module.exports = () => {'},
 		{line: 6, value: 'const a = 1;'},
-		{line: 7, value: 'const b = 2;'},
+		{line: 7, value: 'const b = 20;'},
 		{line: 8, value: 'const c = 3;'}
 	]);
 });
@@ -81,8 +81,18 @@ test('extend lines to equal width', t => {
 	const excerpt = codeExcerpt(source, 7, {around: 1});
 
 	t.deepEqual(excerpt, [
+		{line: 6, value: '  const a = 1; '},
+		{line: 7, value: '  const b = 20;'},
+		{line: 8, value: '  const c = 3; '}
+	]);
+});
+
+test('dont extend lines to equal width', t => {
+	const excerpt = codeExcerpt(source, 7, {around: 1, equalLength: false});
+
+	t.deepEqual(excerpt, [
 		{line: 6, value: '  const a = 1;'},
-		{line: 7, value: '  const b = 2;'},
+		{line: 7, value: '  const b = 20;'},
 		{line: 8, value: '  const c = 3;'}
 	]);
 });
@@ -97,7 +107,7 @@ test('convert tabs to spaces for consistent output', t => {
 		{line: 4, value: '                        '},
 		{line: 5, value: 'module.exports = () => {'},
 		{line: 6, value: '  const a = 1;          '},
-		{line: 7, value: '  const b = 2;          '},
+		{line: 7, value: '  const b = 20;         '},
 		{line: 8, value: '  const c = 3;          '},
 		{line: 9, value: '                        '},
 		{line: 10, value: '  someFunc();           '},

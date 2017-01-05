@@ -46,7 +46,7 @@ const excerpt = codeExcerpt(source, 5);
 
 ### codeExcerpt(source, line, [options])
 
-All lines in the output have equal width for convenience.
+All lines in the output have equal width for convenience (customizable via `options.equalLength`).
 For example, if a line needs to be highlighted, the highlight will be full-width, just like in editors.
 
 #### source
@@ -69,6 +69,13 @@ Type: `number`<br>
 Default: `3`
 
 Number of surrounding lines to extract.
+
+##### equalLength
+
+Type: `boolean`<br>
+Default: `true`
+
+Extend lines to the same length. Useful for highlighting lines.
 
 
 ## License

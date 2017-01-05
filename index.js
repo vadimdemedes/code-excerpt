@@ -44,10 +44,13 @@ module.exports = (source, line, options) => {
 	}
 
 	options = Object.assign({
-		around: 3
+		around: 3,
+		equalLength: true
 	}, options);
 
-	return extendLines(generateLineNumbers(line, options.around)
+	const output = generateLineNumbers(line, options.around)
 		.filter(line => source[line - 1] !== undefined)
-		.map(line => ({line, value: source[line - 1]})));
+		.map(line => ({line, value: source[line - 1]}));
+
+	return options.equalLength ? extendLines(output) : output;
 };
