@@ -3,11 +3,11 @@
   "version": "2.0.0",
   "description": "Extract code excerpts",
   "license": "MIT",
-  "repository": "vdemedes/code-excerpt",
+  "repository": "vadimdemedes/code-excerpt",
   "author": {
     "name": "vdemedes",
     "email": "vdemedes@gmail.com",
-    "url": "github.com/vdemedes"
+    "url": "github.com/vadimdemedes"
   },
   "engines": {
     "node": ">=4"

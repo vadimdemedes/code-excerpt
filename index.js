@@ -2,7 +2,7 @@
 
 const tabsToSpaces = require('convert-to-spaces');
 
-function generateLineNumbers(line, around) {
+const generateLineNumbers = (line, around) => {
 	const lineNumbers = [];
 
 	const min = line - around;
@@ -13,7 +13,7 @@ function generateLineNumbers(line, around) {
 	}
 
 	return lineNumbers;
-}
+};
 
 module.exports = (source, line, options) => {
 	if (typeof source !== 'string') {
