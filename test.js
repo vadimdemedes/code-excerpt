@@ -23,8 +23,8 @@ test('fail when line number is missing', t => {
 	t.throws(() => codeExcerpt(source), 'Line number must start from `1`.');
 });
 
-test('fail when line number is bigger than total number of lines', t => {
-	t.throws(() => codeExcerpt(source, 100, 'Line number `100` is bigger than a total number of lines (11).'));
+test('return null when line number is bigger than total number of lines', t => {
+	t.is(codeExcerpt(source, 100), null);
 });
 
 test('excerpt in the middle', t => {

@@ -27,7 +27,7 @@ module.exports = (source, line, options) => {
 	source = tabsToSpaces(source).split('\n');
 
 	if (line > source.length) {
-		throw new TypeError(`Line number \`${line}\` is bigger than a total number of lines (${source.length}).`);
+		return null;
 	}
 
 	options = Object.assign({around: 3}, options);
