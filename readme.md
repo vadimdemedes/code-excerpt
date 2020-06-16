@@ -2,13 +2,11 @@
 
 > Extract code excerpts
 
-
 ## Install
 
 ```
 $ npm install --save code-excerpt
 ```
-
 
 ## Usage
 
@@ -41,7 +39,6 @@ const excerpt = codeExcerpt(source, 5);
 // ]
 ```
 
-
 ## API
 
 ### codeExcerpt(source, line, [options])
@@ -66,8 +63,3 @@ Type: `number`<br>
 Default: `3`
 
 Number of surrounding lines to extract.
-
-
-## License
-
-MIT © [Vadim Demedes](https://github.com/vadimdemedes)
