@@ -30,7 +30,10 @@ module.exports = (source, line, options) => {
 		return null;
 	}
 
-	options = Object.assign({around: 3}, options);
+	options = {
+		around: 3,
+		...options
+	};
 
 	return generateLineNumbers(line, options.around)
 		.filter(line => source[line - 1] !== undefined)

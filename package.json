@@ -22,10 +22,7 @@
     "convert-to-spaces": "^1.0.1"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
-    "xo": "^0.17.1"
-  },
-  "xo": {
-    "esnext": true
+    "ava": "^3.9.0",
+    "xo": "^0.32.0"
   }
 }

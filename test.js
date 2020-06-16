@@ -1,5 +1,6 @@
-import test from 'ava';
-import codeExcerpt from './';
+'use strict';
+const test = require('ava');
+const codeExcerpt = require('.');
 
 const source = `
 'use strict';
@@ -16,11 +17,13 @@ module.exports = () => {
 `.trim();
 
 test('fail when code is missing', t => {
-	t.throws(() => codeExcerpt(), 'Source code is missing.');
+	const error = t.throws(() => codeExcerpt());
+	t.is(error.message, 'Source code is missing.');
 });
 
 test('fail when line number is missing', t => {
-	t.throws(() => codeExcerpt(source), 'Line number must start from `1`.');
+	const error = t.throws(() => codeExcerpt(source));
+	t.is(error.message, 'Line number must start from `1`.');
 });
 
 test('return null when line number is bigger than total number of lines', t => {
