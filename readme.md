@@ -1,4 +1,4 @@
-# code-excerpt [![Build Status](https://travis-ci.org/vadimdemedes/code-excerpt.svg?branch=master)](https://travis-ci.org/vadimdemedes/code-excerpt)
+# code-excerpt
 
 > Extract code excerpts
 
