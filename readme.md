@@ -1,4 +1,4 @@
-# code-excerpt
+# code-excerpt ![test](https://github.com/vadimdemedes/code-excerpt/workflows/test/badge.svg)
 
 > Extract code excerpts
 
