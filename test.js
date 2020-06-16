@@ -27,7 +27,7 @@ test('fail when line number is missing', t => {
 });
 
 test('return null when line number is bigger than total number of lines', t => {
-	t.is(codeExcerpt(source, 100), null);
+	t.is(codeExcerpt(source, 100), undefined);
 });
 
 test('excerpt in the middle', t => {

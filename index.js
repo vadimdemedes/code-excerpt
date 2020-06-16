@@ -1,5 +1,4 @@
 'use strict';
-
 const tabsToSpaces = require('convert-to-spaces');
 
 const generateLineNumbers = (line, around) => {
@@ -27,7 +26,7 @@ module.exports = (source, line, options) => {
 	source = tabsToSpaces(source).split(/\r?\n/);
 
 	if (line > source.length) {
-		return null;
+		return;
 	}
 
 	options = {
