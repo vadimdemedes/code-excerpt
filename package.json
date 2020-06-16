@@ -13,16 +13,18 @@
     "node": ">=10"
   },
   "scripts": {
-    "test": "xo && ava"
+    "test": "tsd && xo && ava"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "dependencies": {
     "convert-to-spaces": "^1.0.1"
   },
   "devDependencies": {
     "ava": "^3.9.0",
+    "tsd": "^0.11.0",
     "xo": "^0.32.0"
   }
 }
