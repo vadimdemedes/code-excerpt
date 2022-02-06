@@ -1,6 +1,5 @@
-'use strict';
-const test = require('ava');
-const codeExcerpt = require('.');
+import test from 'ava';
+import codeExcerpt from './dist/index.js';
 
 const source = `
 'use strict';
