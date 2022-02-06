@@ -23,8 +23,14 @@
     "convert-to-spaces": "^1.0.1"
   },
   "devDependencies": {
+    "@vdemedes/prettier-config": "^2.0.1",
     "ava": "^3.9.0",
+    "prettier": "^2.5.1",
     "tsd": "^0.11.0",
     "xo": "^0.32.0"
-  }
+  },
+  "xo": {
+    "prettier": true
+  },
+  "prettier": "@vdemedes/prettier-config"
 }

@@ -40,7 +40,7 @@ test('excerpt in the middle', t => {
 		{line: 5, value: 'module.exports = () => {'},
 		{line: 6, value: '  const a = 1;'},
 		{line: 7, value: '  const b = 20;'},
-		{line: 8, value: '  const c = 3;'}
+		{line: 8, value: '  const c = 3;'},
 	]);
 });
 
@@ -48,10 +48,10 @@ test('excerpt in the beginning', t => {
 	const excerpt = codeExcerpt(source, 1);
 
 	t.deepEqual(excerpt, [
-		{line: 1, value: '\'use strict\';'},
+		{line: 1, value: "'use strict';"},
 		{line: 2, value: ''},
 		{line: 3, value: 'function someFunc() {}'},
-		{line: 4, value: ''}
+		{line: 4, value: ''},
 	]);
 });
 
@@ -62,7 +62,7 @@ test('excerpt in the end', t => {
 		{line: 8, value: '  const c = 3;'},
 		{line: 9, value: ''},
 		{line: 10, value: '  someFunc();'},
-		{line: 11, value: '};'}
+		{line: 11, value: '};'},
 	]);
 });
 
@@ -72,7 +72,7 @@ test('extract custom number of lines around', t => {
 	t.deepEqual(excerpt, [
 		{line: 4, value: ''},
 		{line: 5, value: 'module.exports = () => {'},
-		{line: 6, value: '  const a = 1;'}
+		{line: 6, value: '  const a = 1;'},
 	]);
 });
 
@@ -80,7 +80,7 @@ test('convert tabs to spaces for consistent output', t => {
 	const excerpt = codeExcerpt(source, 5, {around: 10});
 
 	t.deepEqual(excerpt, [
-		{line: 1, value: '\'use strict\';'},
+		{line: 1, value: "'use strict';"},
 		{line: 2, value: ''},
 		{line: 3, value: 'function someFunc() {}'},
 		{line: 4, value: ''},
@@ -90,6 +90,6 @@ test('convert tabs to spaces for consistent output', t => {
 		{line: 8, value: '  const c = 3;'},
 		{line: 9, value: ''},
 		{line: 10, value: '  someFunc();'},
-		{line: 11, value: '};'}
+		{line: 11, value: '};'},
 	]);
 });

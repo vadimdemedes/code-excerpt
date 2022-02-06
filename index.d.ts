@@ -38,7 +38,7 @@ declare function codeExcerpt(
 	/**
 	 * Options
 	 */
-	options?: codeExcerpt.Options
+	options?: codeExcerpt.Options,
 ): codeExcerpt.ExcerptLine[] | undefined;
 
 export = codeExcerpt;

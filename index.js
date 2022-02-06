@@ -31,7 +31,7 @@ module.exports = (source, line, options) => {
 
 	options = {
 		around: 3,
-		...options
+		...options,
 	};
 
 	return generateLineNumbers(line, options.around)
